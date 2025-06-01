@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EcoReminder</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="body-login">
+    <a class="logo" href="/">
+        <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="">
+        <h2>EcoReminder</h2>
+    </a>
+
+    <div class="auth-form" style="width: 40vw">
+        <h2>Almost here!</h2>
+
+        <form method="post">
+            <input type="text" name="code" placeholder="Verification code" required>
+            <button class="btn_submit" type="submit">Confirm</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EcoReminder</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=check" />
+</head>
+<body class="body-home">
+    <a class="logo" href="/">
+        <img src="" alt="">
+        <h2>EcoReminder</h2>
+    </a>
+
+    <div class="task_confirm">
+        <button>
+            <span class="material-symbols-outlined">check</span>
+        </button>
+
+        <p>0</p>
+    </div>
+
+    <div class="menu">
+        <a href="/timetable">Timetable</a>
+        <a href="/garden">Garden</a>
+    </div>
+
+    <div class="time-set">
+        <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="">
+        {% if time %}
+            <h3>Time: {{ time }}</h3>
+        {% else %}
+            <h3>Time: not set</h3>
+        {% endif %}
+
+        <form method="post" style="width: 70%;">
+            <button type="submit">Set time</button>
+        </form>
+    </div>
+</body>
+</html>

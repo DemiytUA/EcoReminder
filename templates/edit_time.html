@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EcoReminder</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add" />
+</head>
+<body class="body-pages">
+    <a class="logo" href="/">
+        <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="">
+        <h2>EcoReminder</h2>
+    </a>
+
+
+    <form method="post" class="create_notification-form">
+        <div class="input-container">
+            <div class="date">
+                <input type="datetime-local" name="datetime" id="datetime" required>
+
+                <div class="seleccted-date">
+                    <p>Year: <span id="year">–</span></p>
+                    <p>Month: <span id="month">–</span></p>
+                    <p>Day: <span id="day">–</span></p>
+                    <p>Time: <span id="time">–</span></p>
+                </div>
+
+            </div>
+            <div class="comment">
+                <textarea name="comment" id="comment" required></textarea>
+            </div>
+        </div>
+
+
+        <button class="done-btn" type="submit">Done</button>
+    </form>
+
+<script>
+  const input = document.getElementById('datetime');
+  const year = document.getElementById('year');
+  const month = document.getElementById('month');
+  const day = document.getElementById('day');
+  const time = document.getElementById('time');
+
+  input.addEventListener('input', () => {
+    const value = input.value; // Наприклад: "2025-05-23T18:45"
+    if (value) {
+      const [datePart, timePart] = value.split('T');
+      const [yyyy, mm, dd] = datePart.split('-');
+      year.textContent = yyyy;
+      month.textContent = mm;
+      day.textContent = dd;
+      time.textContent = timePart;
+    } else {
+      year.textContent = month.textContent = day.textContent = time.textContent = '–';
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -192,3 +193,29 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+=======
+# Віртуальне оточення
+venv/
+.venv/
+
+# Python кеші
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Файли налаштувань IDE
+.idea/
+.vscode/
+
+# Файли бази даних
+instance/
+*.sqlite3
+*.db
+
+# Логи
+*.log
+
+# Файли середовища
+.env
+>>>>>>> f906ec5 (First commit)

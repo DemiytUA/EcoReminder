@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EcoReminder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="body-pages">
+    <h1 class="page-title">Garden - {{ name }}</h1>
+
+    <a class="logo" href="/">
+        <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="">
+        <h2>EcoReminder</h2>
+    </a>
+
+    <div class="drop-amount">
+        Your amount <img class="drop" src="{{ url_for('static', filename='images/drop.png') }}">: {{ user.drops }}
+    </div>
+
+    <img src="{{ url_for('static', filename='images/plant_images/' ~ name ~ '/' ~ grow_tree|string ~ '.png') }}" class="plant-image">
+
+    <form method="post">
+        <button class="plant-btn" type="submit">{{ btn_text }}<img class="drop" src="{{ url_for('static', filename='images/drop.png') }}"></button>
+    </form>
+
+    <a href="/garden" class="go_back-btn">Go back</a>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EcoReminder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="body-pages">
+    <h1 class="page-title">Timetable</h1>
+
+    <a class="logo" href="/">
+        <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="">
+        <h2>EcoReminder</h2>
+    </a>
+
+    <div class="timetable-container">
+        {% if notifications %}
+            {% for notification in notifications %}
+                <div class="timetable">
+                    <p>{{ notification.time }}</p>
+                    <p>{{ notification.comment }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No scheduled reminders</p>
+        {% endif %}
+    </div>
+
+    <a href="/home" class="go_back-btn">Go back</a>
+</body>
+</html>

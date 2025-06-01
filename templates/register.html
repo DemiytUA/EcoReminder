@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EcoReminder</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="body-login">
+    <a class="logo" href="/">
+        <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="">
+        <h2>EcoReminder</h2>
+    </a>
+
+    <div class="auth-form">
+        <h2>Sign in</h2>
+        <form method="POST" class="form">
+            <input type="hidden" name="form_name" value="send">
+            <input type="email" name="email" placeholder="Your email address" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Sign in</button>
+        </form>
+    </div>
+</body>
+</html>

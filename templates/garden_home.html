@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EcoReminder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="body-pages">
+    <h1 class="page-title">Garden</h1>
+
+    <a class="logo" href="/">
+        <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="">
+        <h2>EcoReminder</h2>
+    </a>
+
+    <div class="choose_garden-container">
+        <div class="garden">
+            <a href="/garden/apple">
+                <img src="{{ url_for('static', filename='images/gardens/apple.png') }}" alt="">
+            </a>
+            <h3>apple</h3>
+        </div>
+        <div class="garden">
+            <a href="/garden/cherry">
+                <img src="{{ url_for('static', filename='images/gardens/cherry.png') }}" alt="">
+            </a>
+            <h3>cherry</h3>
+        </div>
+        <div class="garden">
+            <a href="/garden/peony">
+                <img src="{{ url_for('static', filename='images/gardens/peony.png') }}" alt="">
+            </a>
+            <h3>peony</h3>
+        </div>
+    </div>
+
+    <a href="/home" class="go_back-btn">Go back</a>
+</body>
+</html>

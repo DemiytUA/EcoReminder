@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EcoReminder</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="body-pages">
+    <h1 class="page-title">Time set</h1>
+
+    <a class="logo" href="/">
+        <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="">
+        <h2>EcoReminder</h2>
+    </a>
+
+    <div class="week-days">
+        {% for day, notes in notifications_by_day.items() %}
+            <div style="display: flex; gap: 50px; align-items: center;">
+                <h3>{{ day }}</h3>
+                <div style="display: flex; gap: 10px;">
+                    {% if notes %}
+                        {% for note in notes %}
+                            <p style="margin-right: 15px;">{{ note.time.strftime('%H:%M') }}</p>
+                        {% endfor %}
+                    {% else %}
+                        <p>No reminders</p>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>
+
+    <div class="btn-container">
+        <a href="/edit-time">Edit</a>
+        <a href="/home">Done</a>
+    </div>
+</body>
+</html>
