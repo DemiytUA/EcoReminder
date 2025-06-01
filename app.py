@@ -256,7 +256,7 @@ def garden(name):
 
     if grow_tree == 0:
         btn_text = 'Plant - 3'
-    elif grow_tree <= 4:
+    elif grow_tree == 4:
         btn_text = 'Grow - 1'
     else:
         btn_text = '🌳 Ready!'
